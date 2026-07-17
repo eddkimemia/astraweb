@@ -1,0 +1,16 @@
+{
+  "name": "Astra Tech Security & IT Solutions",
+  "short_name": "Astra Tech",
+  "description": "World-class security systems, networking, IT infrastructure, cybersecurity & smart business solutions across Kenya & East Africa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
