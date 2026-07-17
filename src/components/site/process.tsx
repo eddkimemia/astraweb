@@ -67,7 +67,7 @@ export function Process() {
         <Reveal delay={0.2}>
           <div className="mt-12 flex items-center justify-center">
             <div className="inline-flex items-center gap-3 rounded-full border border-[#E2E8F0] bg-white px-5 py-2.5 text-sm shadow-premium">
-              <span className="flex h-2 w-2">
+              <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-[#2B5FD9] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#2B5FD9]" />
               </span>

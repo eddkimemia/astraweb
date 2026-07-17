@@ -451,14 +451,14 @@ export default function CheckoutPage() {
                           <div className="mt-1.5 flex items-center gap-2">
                             <button
                               onClick={() => updateQuantity(item.product.slug, item.quantity - 1)}
-                              className="flex h-6 w-6 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
+                              className="flex h-7 w-7 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
                             >
                               <Minus className="h-3 w-3" />
                             </button>
                             <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.product.slug, item.quantity + 1)}
-                              className="flex h-6 w-6 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
+                              className="flex h-7 w-7 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
                             >
                               <Plus className="h-3 w-3" />
                             </button>

@@ -119,7 +119,7 @@ export function Services() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex h-11 items-center gap-2 rounded-xl btn-gradient px-6 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg"
+              className="inline-flex h-12 items-center gap-2 rounded-xl btn-gradient px-6 text-sm font-semibold text-white shadow-md transition-all hover:shadow-lg"
             >
               Talk to an expert
               <ArrowUpRight className="h-4 w-4" />

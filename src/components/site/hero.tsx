@@ -50,7 +50,7 @@ export function Hero() {
 
             <Reveal delay={0.18}>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button asChild size="lg" className="h-13 gap-2 btn-gradient px-8 text-base font-semibold shadow-lg">
+                <Button asChild size="lg" className="gap-2 btn-gradient px-8 text-base font-semibold shadow-lg">
                   <Link href="/contact" className="flex items-center gap-2">
                     Get a Free Consultation
                     <ArrowRight className="h-4 w-4" />
@@ -60,7 +60,7 @@ export function Hero() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="h-13 gap-2 border-[#E2E8F0] bg-white px-8 text-base font-semibold text-[#0F1729] hover:bg-[#F0F4FF] hover:border-[#2B5FD930] hover:text-[#2B5FD9]"
+                  className="gap-2 border-[#E2E8F0] bg-white px-8 text-base font-semibold text-[#0F1729] hover:bg-[#F0F4FF] hover:border-[#2B5FD930] hover:text-[#2B5FD9]"
                 >
                   <Link href="/services" className="flex items-center gap-2">
                     <Play className="h-4 w-4" />

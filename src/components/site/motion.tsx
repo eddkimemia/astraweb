@@ -151,7 +151,7 @@ export function SectionHeading({
                 : "border-[#2B5FD920] bg-[#F0F4FF] text-[#2B5FD9]",
             )}
           >
-            <span className={cn("h-1.5 w-1.5 rounded-full animate-pulse", light ? "bg-[#FF6B35]" : "bg-[#2B5FD9]")} />
+            <span className={cn("h-1.5 w-1.5 rounded-full animate-pulse", light ? "bg-[#FF6B35]" : "bg-[#FF6B35]")} />
             {eyebrow}
           </span>
         </Reveal>

@@ -94,7 +94,7 @@ export function Header() {
             <CartButton onOpen={() => setCartOpen(true)} />
             <WishlistButton />
 
-            <Button asChild size="sm" className="hidden sm:inline-flex btn-gradient h-10 px-5 text-sm font-semibold shadow-md">
+            <Button asChild className="hidden sm:inline-flex btn-gradient h-10 px-5 text-sm font-semibold shadow-md">
               <Link href="/contact">
                 Get a Quote
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
@@ -249,14 +249,14 @@ function CartSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (v: bo
                         <div className="mt-2 flex items-center gap-2">
                           <button
                             onClick={() => updateQuantity(item.product.slug, item.quantity - 1)}
-                            className="flex h-6 w-6 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
+                            className="flex h-7 w-7 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
                           >
                             <Minus className="h-3 w-3" />
                           </button>
                           <span className="w-6 text-center text-sm font-medium">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.product.slug, item.quantity + 1)}
-                            className="flex h-6 w-6 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
+                            className="flex h-7 w-7 items-center justify-center rounded border border-[#E2E8F0] hover:bg-[#F5F7FA]"
                           >
                             <Plus className="h-3 w-3" />
                           </button>
@@ -286,7 +286,7 @@ function CartSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (v: bo
                   <span>{formatKES(total())}</span>
                 </div>
                 <p className="text-xs text-[#5A6577]">VAT and shipping calculated at checkout</p>
-                <Button asChild className="w-full h-12 text-base btn-gradient font-semibold shadow-md" size="lg">
+                <Button asChild className="w-full h-12 text-base btn-gradient font-semibold shadow-md">
                   <Link href="/shop/checkout" onClick={() => onOpenChange(false)}>
                     Proceed to Checkout
                     <ArrowRight className="ml-2 h-4 w-4" />
