@@ -7,6 +7,7 @@ import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { Chatbot } from "@/components/site/chatbot";
 import { BackToTop } from "@/components/site/back-to-top";
+import { StoreHydrator } from "@/components/site/store-hydrator";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({
         className={`${jakarta.variable} ${jetbrains.variable} antialiased bg-background text-foreground`}
       >
         <Header />
+        <StoreHydrator />
         {children}
         <Footer />
         <Chatbot />

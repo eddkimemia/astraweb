@@ -344,7 +344,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                     variant="outline"
                     className="h-12 gap-2 border-white/20 bg-white/5 px-6 text-base text-white hover:bg-white/10 hover:text-white"
                   >
-                    <a href="tel:+254700000000" className="flex items-center gap-2">
+                    <a href="tel:+254715135141" className="flex items-center gap-2">
                       <Phone className="h-4 w-4" />
                       Call Us Now
                     </a>

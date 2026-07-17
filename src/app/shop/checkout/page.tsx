@@ -273,7 +273,7 @@ export default function CheckoutPage() {
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#5A6577]" />
                         <Input
-                          placeholder="+254 700 000 000"
+                          placeholder="+254 715 135 141"
                           className="h-11 pl-10 border-[#E2E8F0] focus:border-[#2B5FD9] focus:ring-[#2B5FD920]"
                           value={form.phone}
                           onChange={(e) => updateField("phone", e.target.value)}

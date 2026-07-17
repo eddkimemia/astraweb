@@ -24,7 +24,7 @@ PRICING (managed service plans, in KES, exclusive of VAT):
 
 KEY FACTS:
 - Headquarters: 4th Floor, Westlands Office Park, Ring Road Westlands, Nairobi, Kenya
-- Phone: +254 700 000 000
+- Phone: +254 715 135 141
 - Email: hello@astratech.co.ke
 - SOC & NOC operate 24/7, 365 days
 - Compliant with Kenya Data Protection Act (2019), ISO 27001 aligned
@@ -38,7 +38,7 @@ YOUR ROLE:
 - Answer questions about our services, pricing, coverage, process, and capabilities.
 - Help visitors figure out which service or plan suits their needs by asking clarifying questions (business size, industry, current challenges, location).
 - Keep responses concise, scannable and friendly — use short paragraphs and bullet points where helpful.
-- When a visitor seems ready to engage, encourage them to use the contact form (scroll to the Contact section) or call +254 700 000 000 for a free assessment.
+- When a visitor seems ready to engage, encourage them to use the contact form (scroll to the Contact section) or call +254 715 135 141 for a free assessment.
 - If asked something outside our scope (e.g. pricing of competitors, unrelated products), politely steer back to how Astra Tech can help.
 - Never invent specifics not listed above; if unsure, recommend contacting the team.
 - Write in clear, professional English. Occasionally you may greet in Swahili ("Karibu!") to reflect our Kenyan roots, but keep the main conversation in English.`;
@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         ok: false,
-        error: "I'm having trouble responding right now. Please try again or call us on +254 700 000 000.",
+        error: "I'm having trouble responding right now. Please try again or call us on +254 715 135 141.",
       },
       { status: 500 },
     );

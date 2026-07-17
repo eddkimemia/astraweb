@@ -4,12 +4,12 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ShoppingCart, Star, ArrowRight, Search, SlidersHorizontal } from "lucide-react";
+import { ShoppingCart, Star, ArrowRight, Search, SlidersHorizontal, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { products, categories } from "@/lib/products";
-import { useCart } from "@/lib/store";
+import { useCart, useWishlist } from "@/lib/store";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +22,10 @@ export default function ShopPage() {
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<"name" | "price-asc" | "price-desc">("name");
   const addItem = useCart((s) => s.addItem);
+  const toggleWishlist = useWishlist((s) => s.toggleWishlist);
+  const wishlistItems = useWishlist((s) => s.items);
+
+  const isWishlisted = (slug: string) => wishlistItems.some((i) => i.slug === slug);
 
   const filtered = useMemo(() => {
     let list = products;
@@ -169,6 +173,16 @@ export default function ShopPage() {
                           {product.badge}
                         </Badge>
                       )}
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          toggleWishlist(product);
+                        }}
+                        className={`absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-white/90 backdrop-blur-sm shadow-sm transition-all hover:scale-110 ${isWishlisted(product.slug) ? "text-red-500 border-red-200" : "text-muted-foreground hover:text-red-500"}`}
+                        aria-label={isWishlisted(product.slug) ? "Remove from wishlist" : "Add to wishlist"}
+                      >
+                        <Heart className={`h-4 w-4 ${isWishlisted(product.slug) ? "fill-red-500" : ""}`} />
+                      </button>
                     </Link>
 
                     {/* Content */}

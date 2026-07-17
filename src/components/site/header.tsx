@@ -5,13 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Menu, X, Phone, Mail, MapPin, ChevronDown, ArrowRight, ShoppingCart, Trash2, Plus, Minus,
+  Menu, X, Phone, Mail, MapPin, ChevronDown, ArrowRight, ShoppingCart, Trash2, Plus, Minus, Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Logo } from "./logo";
 import { cn } from "@/lib/utils";
-import { useCart } from "@/lib/store";
+import { useCart, useWishlist } from "@/lib/store";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -84,14 +84,15 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="tel:+254700000000"
+              href="tel:+254715135141"
               className="hidden items-center gap-2 rounded-xl border border-[#E2E8F0] bg-white px-4 py-2.5 text-sm font-medium text-[#5A6577] transition-all hover:border-[#2B5FD930] hover:text-[#2B5FD9] hover:shadow-sm md:flex"
             >
               <Phone className="h-3.5 w-3.5" />
-              +254 700 000 000
+              +254 715 135 141
             </a>
 
             <CartButton onOpen={() => setCartOpen(true)} />
+            <WishlistButton />
 
             <Button asChild size="sm" className="hidden sm:inline-flex btn-gradient h-10 px-5 text-sm font-semibold shadow-md">
               <Link href="/contact">
@@ -144,8 +145,8 @@ export function Header() {
                       </Link>
                     </Button>
                     <div className="space-y-2 pt-2 text-sm">
-                      <a href="tel:+254700000000" className="flex items-center gap-2.5 text-[#5A6577] hover:text-[#2B5FD9]">
-                        <Phone className="h-4 w-4" /> +254 700 000 000
+                      <a href="tel:+254715135141" className="flex items-center gap-2.5 text-[#5A6577] hover:text-[#2B5FD9]">
+                        <Phone className="h-4 w-4" /> +254 715 135 141
                       </a>
                       <a href="mailto:hello@astratech.co.ke" className="flex items-center gap-2.5 text-[#5A6577] hover:text-[#2B5FD9]">
                         <Mail className="h-4 w-4" /> hello@astratech.co.ke
@@ -185,8 +186,34 @@ function CartButton({ onOpen }: { onOpen: () => void }) {
   );
 }
 
+function WishlistButton() {
+  const count = useWishlist((s) => s.items.length);
+  return (
+    <Link
+      href="/shop/wishlist"
+      className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-[#E2E8F0] bg-white text-[#5A6577] transition-all hover:border-[#2B5FD930] hover:text-[#2B5FD9] hover:shadow-sm"
+      aria-label="Wishlist"
+    >
+      <Heart className="h-4.5 w-4.5" />
+      {count > 0 && (
+        <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-md">
+          {count}
+        </span>
+      )}
+    </Link>
+  );
+}
+
 function CartSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   const { items, removeItem, updateQuantity, clearCart, total } = useCart();
+  const toggleWishlist = useWishlist((s) => s.toggleWishlist);
+  const wishlisted = useWishlist((s) => s.items);
+
+  const isWishlisted = (slug: string) => wishlisted.some((i) => i.slug === slug);
+
+  const handleWishlist = (product: (typeof items)[0]["product"]) => {
+    toggleWishlist(product);
+  };
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -245,6 +272,13 @@ function CartSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (v: bo
                           >
                             <Trash2 className="h-4 w-4" />
                           </button>
+                          <button
+                            onClick={() => handleWishlist(item.product)}
+                            className={`text-[#5A6577] transition-colors ${isWishlisted(item.product.slug) ? "text-red-500 hover:text-red-600" : "hover:text-red-500"}`}
+                            title={isWishlisted(item.product.slug) ? "Remove from wishlist" : "Add to wishlist"}
+                          >
+                            <Heart className={`h-4 w-4 ${isWishlisted(item.product.slug) ? "fill-red-500" : ""}`} />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -300,8 +334,8 @@ function AnnouncementBar() {
               <span className="hidden items-center gap-1.5 text-white/70 sm:flex">
                 <MapPin className="h-3 w-3" /> Westlands, Nairobi
               </span>
-              <a href="tel:+254700000000" className="hidden items-center gap-1.5 text-white/70 transition-colors hover:text-white sm:flex">
-                <Phone className="h-3 w-3" /> +254 700 000 000
+              <a href="tel:+254715135141" className="hidden items-center gap-1.5 text-white/70 transition-colors hover:text-white sm:flex">
+                <Phone className="h-3 w-3" /> +254 715 135 141
               </a>
             </div>
             <Link

@@ -119,7 +119,7 @@ export function Contact() {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              <ContactCard icon={Phone} label="Call us" value="+254 700 000 000" href="tel:+254700000000" />
+              <ContactCard icon={Phone} label="Call us" value="+254 715 135 141" href="tel:+254715135141" />
               <ContactCard icon={Mail} label="Email us" value="hello@astratech.co.ke" href="mailto:hello@astratech.co.ke" />
               <ContactCard icon={MapPin} label="Visit us" value="Westlands, Nairobi" />
               <ContactCard icon={Clock} label="Support" value="24/7 NOC &amp; SOC" />
@@ -212,7 +212,7 @@ export function Contact() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <Field label="Phone" error={errors.phone?.message}>
                         <Input
-                          placeholder="+254 700 000 000"
+                          placeholder="+254 715 135 141"
                           className="h-11 border-[#E2E8F0] focus:border-[#2B5FD9] focus:ring-[#2B5FD920]"
                           {...register("phone")}
                         />

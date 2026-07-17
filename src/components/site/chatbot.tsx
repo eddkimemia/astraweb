@@ -76,7 +76,7 @@ export function Chatbot() {
         {
           role: "assistant",
           content:
-            "I'm having trouble responding right now. Please call us on +254 700 000 000 or fill out the contact form below, and our team will help you directly.",
+            "I'm having trouble responding right now. Please call us on +254 715 135 141 or fill out the contact form below, and our team will help you directly.",
         },
       ]);
     } finally {

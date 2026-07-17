@@ -42,11 +42,11 @@ export function CtaBanner() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href="tel:+254700000000"
+                  href="tel:+254715135141"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10"
                 >
                   <PhoneCall className="h-4 w-4" />
-                  +254 700 000 000
+                  +254 715 135 141
                 </a>
               </div>
             </div>
