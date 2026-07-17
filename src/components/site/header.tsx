@@ -110,11 +110,8 @@ export function Header() {
               <SheetContent side="right" className="w-full max-w-sm p-0">
                 <SheetTitle className="sr-only">Navigation menu</SheetTitle>
                 <div className="flex h-full flex-col">
-                  <div className="flex items-center justify-between border-b border-[#E2E8F0] px-5 py-4">
+                  <div className="flex items-center border-b border-[#E2E8F0] px-5 py-4">
                     <Logo />
-                    <Button variant="ghost" size="icon" onClick={() => setMobileOpen(false)} aria-label="Close menu">
-                      <X className="h-5 w-5" />
-                    </Button>
                   </div>
                   <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
                     {navLinks.map((link) => {
@@ -222,9 +219,6 @@ function CartSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (v: bo
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-[#E2E8F0] px-5 py-4">
             <h2 className="text-lg font-bold">Cart ({useCart.getState().itemCount()})</h2>
-            <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-              <X className="h-5 w-5" />
-            </Button>
           </div>
 
           {items.length === 0 ? (
